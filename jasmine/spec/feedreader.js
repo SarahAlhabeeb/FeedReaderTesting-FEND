@@ -56,10 +56,10 @@ $(function () {
             $menuIcon = $('.menu-icon-link')
             const body = document.querySelector('body');
             // first click to show
-            $menuIcon.trigger('click')
+            $menuIcon.click();
             expect($(body).hasClass('menu-hidden')).toBe(false);
             // second click to hide
-            $menuIcon.trigger('click')
+            $menuIcon.click();
             expect($(body).hasClass('menu-hidden')).toBe(true);
         });
 
@@ -80,8 +80,8 @@ $(function () {
         });
 
         it('at least has a single entry element', function (done) {
-            let container = $('.parent .child');
-            expect(container.is(':empty')).toBe(false);
+            let entries = $('.feed .entry');
+            expect(entries.length).not.toBe(0);
             done();
 
         });
