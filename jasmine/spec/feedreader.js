@@ -46,7 +46,7 @@ $(function () {
 
         it('menu is hidden by default', function () {
             const body = document.querySelector('body');
-            expect(body).toHaveClass('menu-hidden');
+            expect($(body).hasClass('menu-hidden')).toBe(true);
         });
 
         /* This test ensures that the menu is changing
@@ -57,10 +57,10 @@ $(function () {
             const body = document.querySelector('body');
             // first click to show
             $menuIcon.trigger('click')
-            expect(body).not.toHaveClass('menu-hidden');
+            expect($(body).hasClass('menu-hidden')).toBe(false);
             // second click to hide
             $menuIcon.trigger('click')
-            expect(body).toHaveClass('menu-hidden');
+            expect($(body).hasClass('menu-hidden')).toBe(true);
         });
 
     });
@@ -76,14 +76,12 @@ $(function () {
         */
 
         beforeEach(function (done) {
-            loadFeed(0, function () {
-                done();
-            });
+            loadFeed(0, done);
         });
 
         it('at least has a single entry element', function (done) {
-            feedList = $('.feed-list');
-            expect(feedList[0].length).not.toBe(0);
+            let container = $('.parent .child');
+            expect(container.is(':empty')).toBe(false);
             done();
 
         });
