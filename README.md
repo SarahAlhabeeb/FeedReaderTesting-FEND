@@ -12,6 +12,10 @@ In this project we are given a web-based application that reads RSS feeds. The o
 - Download the zipped file or clone the project.
 - Open the index page in the browser.
 
+
+### The starter code
+provided from Udacity: [here](https://github.com/udacity/frontend-nanodegree-feedreader)
+
 #### References
 The third-party resources that helped in some how in this project:
 * [1](https://gist.github.com/davilious/9503539)
